@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   devtool : 'source-map',
   entry:   { filename: './src/index.js' },
-  output : { filename: './js/app.js', path: `${__dirname}/dist/` },
+  output : { filename: 'app.js', path: `${__dirname}/dist/js` },
   module: {
     loaders: [
 		 { 
@@ -16,14 +16,10 @@ module.exports = {
              presets: ['es2015', 'react']
           }
 		 },
-	    {
-		    test: /\.scss$/,
-			 loader: ExtractTextPlugin.extract({fallbackLoader: "style-loader", loader: "css-loader!sass-loader!resolve-url-loader"})		 
-		 },
 		 {
-			 test: /\.jpg/,
-			 loader: 'file-loader?name=[name].[ext]&outputPath=images/'
-		 }
+		    test: /\.scss$/,
+			 loader: ExtractTextPlugin.extract({fallbackLoader: "style-loader", loader: "css-loader!sass-loader"})		 
+			 },
 	 ]
   },
   plugins: [
@@ -40,6 +36,6 @@ module.exports = {
 	  }),
 	 
      //env plugin -- css
-     new ExtractTextPlugin({filename: './css/styles.css', allChunks: true})
+     new ExtractTextPlugin({filename: './dist/css/styles.css', allChunks: true})
   ]
 }
