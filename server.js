@@ -16,7 +16,6 @@ const app = express()
 if( process.env.NODE_ENV === 'development' ){
 	webpack = require('webpack');
 	webpackMiddleware = require('webpack-dev-middleware');
-	console.log("????????")
 	webpackConfig = require('./webpack.config.dev.js');
 	webpackCompiler = webpack(webpackConfig)
 	
