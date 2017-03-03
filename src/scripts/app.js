@@ -6,6 +6,7 @@ const SomeComponent = React.createClass({
 		console.log('whoa!')
 		return <div>
 			<h1>Owoooooooooo!</h1>
+			<img src="./images/exciting.jpg"/>
 		</div>
 	}
 })

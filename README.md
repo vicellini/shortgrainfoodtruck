@@ -2,25 +2,36 @@
 
 ##Setup 
 
-##### 1. Clone this repo
+#### 1. Clone this repo
 ```
 git clone git@github.com:t3tools/webpack-es6-and-scss.git «your-projet»
 ```
 
-##### 2. Install the packages
+#### 2. Install the packages
 ```
 npm install
 ```
 
-##### 3. Run the taskrunner & run the local server
+#### 3. Run the taskrunner & run the local server
 ```
 npm run go
 ```
 
-##### 4. Workflow
-Do scss and javascript work in the `src/` directory. It will compile to the `dist/` with the taskrunner.
+#### 4. Workflow
+Do `.scss` and javascript work in the `src/` directory. 
+
+*Note* for linking images in `.js` files:
+- you must link relative to the `index.html` in the `dist/` folder since that is where the bundle.js .
+- example in React: `<img src="./images/party-hat">`
+
+
 
 `index.html` pages are served out of the `dist/`
+
+For linking images in `url()` in `.scss` files:
+
+
+
 
 ##Webpack Configuration:
 ```

@@ -1,11 +1,13 @@
 const webpack = require('webpack')
 const nodeEnv = process.env.NODE_ENV || 'production'
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool : 'source-map',
   entry:   { filename: './src/index.js' },
-  output : { filename: './js/app.js', path: `${__dirname}/dist/` },
+  output : { filename: './js/bundle.js', path: `${__dirname}/dist/` },
+  context : `${__dirname}` ,
   module: {
     loaders: [
 		 { 
@@ -18,11 +20,11 @@ module.exports = {
 		 },
 	    {
 		    test: /\.scss$/,
-			 loader: ExtractTextPlugin.extract({fallbackLoader: "style-loader", loader: "css-loader!sass-loader!resolve-url-loader"})		 
+				 loader: ExtractTextPlugin.extract({fallbackLoader: "style-loader", loader: "css-loader!sass-loader!resolve-url-loader"})		 
 		 },
 		 {
-			 test: /\.jpg/,
-			 loader: 'file-loader?name=[name].[ext]&outputPath=images/'
+			 test: /\.(jpe?g|png|gif|svg)$/i,
+			 loader: 'file-loader?name=[name].[ext]&outputPath=images/&publicPath=../images/&context=./src/images'
 		 }
 	 ]
   },
@@ -38,6 +40,10 @@ module.exports = {
 	  new webpack.DefinePlugin({
         'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
 	  }),
+
+	  new CopyWebpackPlugin([
+	     {from : 'src/images', to: 'images'}
+	  ]),
 	 
      //env plugin -- css
      new ExtractTextPlugin({filename: './css/styles.css', allChunks: true})

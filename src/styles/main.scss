@@ -1,14 +1,16 @@
+@import "./part/some-part.scss";
+
 *{
 	box-sizing: border-box;
 }
+body{margin: 0;}
 
-body{
-	background: url('../images/cool-img.jpg');
-}
 
-$txt-color: maroon;
 
-h2{
+$txt-color: #fff;
+
+h1{
+	margin: 0 0 10px 0;
 	color: $txt-color;
 	border-bottom: 4px solid $txt-color;
 }

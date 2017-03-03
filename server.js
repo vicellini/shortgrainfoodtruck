@@ -16,9 +16,10 @@ const app = express()
 if( process.env.NODE_ENV === 'development' ){
 	webpack = require('webpack');
 	webpackMiddleware = require('webpack-dev-middleware');
-	webpackConfig = require('./webpack.config.js');
+	console.log("????????")
+	webpackConfig = require('./webpack.config.dev.js');
 	webpackCompiler = webpack(webpackConfig)
-
+	
 	console.log('using teh webpack!')
 	app.use(webpackMiddleware(webpackCompiler, {
 	   noInfo: true,
