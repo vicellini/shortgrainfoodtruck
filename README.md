@@ -24,6 +24,9 @@ Do `.scss` and javascript work in the `src/` directory.
 - you must link relative to the `index.html` in the `dist/` folder since that is where the bundle.js .
 - example in React: `<img src="./images/party-hat">`
 
+*Note* for linking background-images in `.scss` files (with `url(...)`):
+- you must link to the `images/` directory, relative to `main.scss`
+- that is to say, all url links will have the structure: `url(''../images/some-image.jpg')`
 
 
 `index.html` pages are served out of the `dist/`
