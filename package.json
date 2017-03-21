@@ -5,11 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node --use_strict server.js",
-    "go": "npm-run-all --parallel dev-server",
+    "go": "npm-run-all --parallel dev-server webpack-watcher",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dist": "webpack",
     "dev-server": "NODE_ENV=development node server.js",
-    "webpack-watcher": "webpack --progress --watch"
+    "webpack-watcher": "webpack --progress --watch --config webpack.config.dev.js"
   },
   "author": "",
   "license": "ISC",

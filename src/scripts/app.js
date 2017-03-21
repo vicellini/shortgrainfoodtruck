@@ -5,7 +5,7 @@ const SomeComponent = React.createClass({
 	render: function(){
 		console.log('whoa!')
 		return <div>
-			<h1>Owoooooooooo!</h1>
+			<h1>Lil Flip!</h1>
 			<img src="./images/exciting.jpg"/>
 		</div>
 	}
