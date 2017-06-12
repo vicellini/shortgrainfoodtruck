@@ -1,0 +1,41 @@
+.you-know {
+  font-family: "allura", sans-serif;
+  font-size: 38px;
+  text-align: center;
+  padding: 15px 25px;
+  color: #207C7C;
+}
+
+.quote {
+  font-size: 25px;
+  color: #1B1819;
+}
+
+.single-press {
+  color: #1B1819;
+  text-align: center;
+  & a {
+    text-decoration: none;
+  }
+  & img {
+    width: 200px;
+    height: 175px;
+  }
+}
+
+.press-name {
+  color: #207C7C;
+  font-size: 20px;
+  margin-top: 13px;
+}
+
+.press-date {
+   color: #207C7C;
+   font-size: 12px;
+   margin-top: 10px;
+}
+
+.single-press a:hover {
+  border-color: #207C7C;
+  color: #1B887A;
+}

@@ -1,15 +1,47 @@
+import Backbone from 'backbone';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {ViewController} from './view-controller.js';
+import {ACTIONS} from './actions.js';
 
-const SomeComponent = React.createClass({
-	render: function(){
-		console.log('whoa!')
-		return <div>
-			<h1>Lil Flip!</h1>
-			<img src="./images/exciting.jpg"/>
-		</div>
+const AppRouter = Backbone.Router.extend({
+	initialize: function(){
+		Backbone.history.start()
+	},
+
+	routes: {
+		'locate' : 'showLocatePage',
+		'press' : 'showPressPage',
+		'events' : 'showEventPage',
+		'menu' : 'showMenuPage',
+		'about' : 'showAboutPage',
+		'' : 'showHomePage'
+	},
+
+	showHomePage: function(){
+		ACTIONS.setView('HOME')
+	},
+
+	showAboutPage: function(){
+		ACTIONS.setView('ABOUT')
+	},
+
+	showMenuPage: function(){
+		ACTIONS.setView('MENU')
+	},
+
+	showEventPage: function(){
+		ACTIONS.setView('EVENTS')
+	},
+
+	showPressPage: function(){
+		ACTIONS.setView('PRESS')
+	},
+
+	showLocatePage: function(){
+		ACTIONS.setView('LOCATE')
 	}
 })
 
-console.log('whyyyyy', React)
-ReactDOM.render(<SomeComponent/>, document.querySelector('#app-container'))
+new AppRouter()
+ReactDOM.render(<ViewController/>, document.querySelector('#app-container'))

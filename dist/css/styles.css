@@ -1,18 +1,18 @@
-#app-container {
-  background: url(../images/cool-img-red.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh; }
 
 * {
   box-sizing: border-box; }
 
 body {
   margin: 0; }
+h2{
+	text-align: center;
+	color: #333;
+}
 
-h1 {
-  margin: 0 0 10px 0;
-  color: #fff;
-  border-bottom: 4px solid #fff; }
+.loading-img {
+	width: 400px;
+	margin: 0 auto;
+	display: block;
+}
 
 /*# sourceMappingURL=styles.css.map*/

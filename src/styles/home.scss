@@ -1,0 +1,28 @@
+.home-view {
+	background: url('../images/sg-home.jpeg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	.tagline {
+		color: #207C7C;
+		font-family: 'allura';
+		font-size: 45px;
+		letter-spacing: 1px;
+		background: none;
+	}
+}
+
+.tagline-div {
+	padding-top: 255px;
+	text-align: center;
+  width: 80%;
+	margin: 0 auto;
+	& p {
+		margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    line-height: 1.6;
+	}
+}
+
+// color: #fff;
+// text-shadow: 2px 2px rgba(95,95,95, 0.8);

@@ -1,0 +1,32 @@
+.nav-dropdown {
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 32px;
+  transform: translateY(-140px);
+  position: relative;
+  z-index: 99999;
+}
+
+.nav-menu {
+  padding: 0;
+}
+
+.nav-button {
+  background: none;
+}
+
+.fa-bars {
+  font-size: 43px;
+  padding: 3px;
+  color: #F9EED8;
+}
+
+.nav-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+
+.nav-item {
+  border: 1px solid #333;
+  padding: 10px 30px;
+}
